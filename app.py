@@ -48,7 +48,7 @@ if prompt := st.chat_input("Ask your question..."):
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = asyncio.run(agent.run(user_prompt=prompt))
-            answer = response.data
+            answer = response.output
             st.markdown(answer)
 
     # Save response to history + logs
